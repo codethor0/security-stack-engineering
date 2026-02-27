@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OffensiveFindings",
+  "type": "object",
+  "properties": {
+    "techniques_tested": { "type": "array", "items": { "type": "string" } },
+    "detections_triggered": { "type": "object" },
+    "missed_detections": { "type": "array" },
+    "response_latency": { "type": "object" },
+    "evidence_quality": { "type": "string" }
+  }
+}

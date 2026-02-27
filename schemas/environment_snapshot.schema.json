@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EnvironmentSnapshot",
+  "type": "object",
+  "required": ["snapshot_id", "timestamp"],
+  "properties": {
+    "snapshot_id": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "assets": { "type": "object" },
+    "identities": { "type": "object" },
+    "data_flows": { "type": "array" },
+    "attack_surface": { "type": "array" }
+  }
+}

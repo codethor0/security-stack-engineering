@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AssuranceReport",
+  "type": "object",
+  "required": ["report_id", "report_type", "generated_at", "generated_by"],
+  "properties": {
+    "report_id": { "type": "string" },
+    "report_type": { "type": "string" },
+    "period_start": { "type": "string" },
+    "period_end": { "type": "string" },
+    "generated_at": { "type": "integer" },
+    "generated_by": { "type": "string" },
+    "sections": { "type": "array" },
+    "attestations": { "type": "array" },
+    "evidence_summary": { "type": "object" }
+  }
+}

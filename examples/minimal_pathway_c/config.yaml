@@ -1,0 +1,20 @@
+# Pathway C: full L0-L8
+# Complete coordinated security operations
+
+pathway: c
+layers:
+  - l0_govern
+  - l1_asset_surface
+  - l2_identity
+  - l3_telemetry_fabric
+  - l4_adversary
+  - l5_detection
+  - l6_response
+  - l7_engineering
+  - l8_assurance
+
+python_layers:
+  - l1_asset_surface
+  - l3_telemetry_fabric
+  - l5_detection_analytics
+  - l7_engineering_hardening

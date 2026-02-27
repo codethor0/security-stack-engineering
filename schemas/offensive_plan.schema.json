@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OffensivePlan",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["task", "public_key", "signature"],
+    "properties": {
+      "task": { "type": "object" },
+      "public_key": { "type": "array", "items": { "type": "integer" } },
+      "signature": { "type": "array", "items": { "type": "integer" } }
+    }
+  }
+}

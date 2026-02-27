@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GovernanceToken",
+  "type": "object",
+  "required": ["token_id", "issued_at", "valid_until", "issuer"],
+  "properties": {
+    "token_id": { "type": "string" },
+    "issued_at": { "type": "integer" },
+    "valid_until": { "type": "integer" },
+    "governance": { "type": "object" },
+    "risk_register": { "type": "object" },
+    "objectives": { "type": "array", "items": { "type": "object" } },
+    "target_metrics": { "type": "object" },
+    "signature": { "type": "array", "items": { "type": "integer" } },
+    "issuer": { "type": "string" }
+  }
+}

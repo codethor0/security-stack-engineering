@@ -1,0 +1,2 @@
+# Security Stack Engineering - Python dependencies
+# Python 3.11+ recommended

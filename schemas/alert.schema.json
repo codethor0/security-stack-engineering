@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Alert",
+  "type": "object",
+  "required": ["alert_id", "timestamp", "rule_id", "severity", "status"],
+  "properties": {
+    "alert_id": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "rule_id": { "type": "string" },
+    "technique_id": { "type": "string" },
+    "severity": { "type": "string" },
+    "entities": { "type": "object" },
+    "evidence_refs": { "type": "array" },
+    "engagement_correlation": { "type": "string" },
+    "status": { "type": "string" }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NormalizedEvent",
+  "type": "object",
+  "required": ["event_id", "timestamp", "event_type", "source_type"],
+  "properties": {
+    "event_id": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "event_type": { "type": "string" },
+    "source_type": { "type": "string" },
+    "source_id": { "type": "string" },
+    "actor": { "type": "object" },
+    "target": { "type": "object" },
+    "action": { "type": "string" },
+    "outcome": { "type": "string" },
+    "raw_hash": { "type": "string" },
+    "enrichment": { "type": "object" },
+    "engagement_id": { "type": "string" }
+  }
+}

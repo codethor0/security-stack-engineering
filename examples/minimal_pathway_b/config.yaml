@@ -1,0 +1,17 @@
+# Pathway B: adds L1 + L3 + L5 (Python)
+# Closed-loop defense with detection posture
+
+pathway: b
+layers:
+  - l0_govern
+  - l1_asset_surface
+  - l3_telemetry_fabric
+  - l4_adversary
+  - l5_detection
+  - l8_assurance
+
+# Python services required
+python_layers:
+  - l1_asset_surface
+  - l3_telemetry_fabric
+  - l5_detection_analytics

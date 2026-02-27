@@ -1,0 +1,16 @@
+# Pathway A: L0 + L4 + L5 + L8 (minimal viable)
+# Governed adversary simulation with audit trail
+
+pathway: a
+layers:
+  - l0_govern
+  - l4_adversary
+  - l5_detection  # bridge for hello-world
+  - l8_assurance
+
+engagement:
+  id: eng-demo-001
+  operator: op-demo
+  approver: approver-demo
+  techniques:
+    - T1078  # Valid Accounts
