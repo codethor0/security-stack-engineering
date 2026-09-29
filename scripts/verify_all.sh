@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Verification script: run all checks and report status.
-set -e
+# Every check runs; failures are counted and the summary always prints.
+set -u
 cd "$(dirname "$0")/.."
 
 echo "=== Security Stack Engineering Verification ==="
@@ -12,11 +13,11 @@ FAIL=0
 check() {
     if "$@" > /dev/null 2>&1; then
         echo "[OK] $1"
-        ((PASS++)) || true
+        PASS=$((PASS + 1))
         return 0
     else
         echo "[FAIL] $1"
-        ((FAIL++)) || true
+        FAIL=$((FAIL + 1))
         return 1
     fi
 }
@@ -38,38 +39,38 @@ from python.l7_engineering_hardening.engineering_engine import EngineeringEngine
 echo "4. Attribution (README)"
 if grep -q "Thor Thor" README.md && grep -q "codethor0" README.md; then
     echo "[OK] README attribution"
-    ((PASS++))
+    PASS=$((PASS + 1))
 else
     echo "[FAIL] README attribution"
-    ((FAIL++))
+    FAIL=$((FAIL + 1))
 fi
 
 echo "5. Patent notice (README)"
 if grep -q "patent filings" README.md; then
     echo "[OK] Patent notice present"
-    ((PASS++))
+    PASS=$((PASS + 1))
 else
     echo "[FAIL] Patent notice missing"
-    ((FAIL++))
+    FAIL=$((FAIL + 1))
 fi
 
 echo "6. Substack link (README)"
 if grep -q "uniqueviolation.substack.com" README.md; then
     echo "[OK] Substack link correct"
-    ((PASS++))
+    PASS=$((PASS + 1))
 else
     echo "[FAIL] Substack link missing or wrong"
-    ((FAIL++))
+    FAIL=$((FAIL + 1))
 fi
 
 echo "7. Required files"
 for f in README.md LICENSE CONTRIBUTING.md CODE_OF_CONDUCT.md go.mod .github/workflows/go-test.yml; do
     if [ -f "$f" ]; then
         echo "[OK] $f exists"
-        ((PASS++))
+        PASS=$((PASS + 1))
     else
         echo "[FAIL] $f missing"
-        ((FAIL++))
+        FAIL=$((FAIL + 1))
     fi
 done
 
